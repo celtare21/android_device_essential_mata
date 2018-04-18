@@ -770,6 +770,13 @@ service sensor-sh /vendor/bin/init.qcom.sensors.sh
     user root
     oneshot
 
+service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
+    socket msm_irqbalance seqpacket 660 root system
+    class core
+    user root
+    group root
+    writepid /dev/cpuset/system-background/tasks
+
 service sensors /vendor/bin/sensors.qcom
     class core
     user root

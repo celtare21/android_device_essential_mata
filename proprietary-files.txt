@@ -915,3 +915,5 @@ vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
 
 # Wi-Fi
 vendor/bin/cnss-daemon
+
+vendor/bin/msm_irqbalance

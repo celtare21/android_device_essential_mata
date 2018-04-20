@@ -84,8 +84,8 @@ on property:sys.boot_completed=1
 
     # Enable input boost configuration
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800"
-    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 15
-    write /sys/module/cpu_boost/parameters/input_boost_ms 500
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 13
+    write /sys/module/cpu_boost/parameters/input_boost_ms 400
 
     # Setup power retention
     write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N

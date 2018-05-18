@@ -75,7 +75,7 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 108000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "85 380000:32 480000:23 580000:45 680000:37 780000:53 880000:82 980000:61 1080000:81 1180000:85 1380000:50 1480000:95 1580000:99"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 18000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
@@ -84,11 +84,11 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 180000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
 
-    write /proc/sys/kernel/sched_spill_load 90
-    write /proc/sys/kernel/sched_prefer_sync_wakee_to_waker 1
-    write /proc/sys/kernel/sched_boost 0
-    write /proc/sys/kernel/sched_init_task_load 40
-    write /proc/sys/kernel/sched_freq_inc_notify 3000000
+#    write /proc/sys/kernel/sched_spill_load 90
+#    write /proc/sys/kernel/sched_prefer_sync_wakee_to_waker 1
+#    write /proc/sys/kernel/sched_boost 0
+#    write /proc/sys/kernel/sched_init_task_load 40
+#    write /proc/sys/kernel/sched_freq_inc_notify 3000000
 
     # online big cluster
     write /sys/devices/system/cpu/cpu4/online 1
@@ -105,25 +105,25 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 18000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 0
 
     # Input boost configuration
     write /sys/kernel/cpu_input_boost/ib_freqs "1324800 1324800"
-    write /sys/kernel/cpu_input_boost/ib_duration_ms 50
+    write /sys/kernel/cpu_input_boost/ib_duration_ms 150
     write /sys/kernel/cpu_input_boost/enabled 1
 
     # Core Control
-    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 2
-    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 0
-    write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 60
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
-    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
-    write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
-    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
+#    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 2
+#    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 0
+#    write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
+#    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 60
+#    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
+#    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
+#    write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
+#    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
 
     # CPU is configured, re-enable thermal core control
     write /sys/module/msm_thermal/core_control/enabled 1

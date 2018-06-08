@@ -65,15 +65,16 @@ on property:sys.boot_completed=1
     # disable thermal core control until CPU is configured
     write /sys/module/msm_thermal/core_control/enabled 0
 
-    # Configure schedutil for big cores
+    # Configure schedutil
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 20000
-
-    # Configure schedutil for LITTLE cores
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 20000
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable 0
 
     # CPU is configured, re-enable thermal core control
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -84,8 +85,8 @@ on property:sys.boot_completed=1
 
     # Enable input boost configuration
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800"
-    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 15
-    write /sys/module/cpu_boost/parameters/input_boost_ms 500
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 13
+    write /sys/module/cpu_boost/parameters/input_boost_ms 150
 
     # Setup power retention
     write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
@@ -112,7 +113,6 @@ on property:sys.boot_completed=1
 
     # Disable sched boost
     write /proc/sys/kernel/sched_boost 0
-    chmod 0444 /proc/sys/kernel/sched_boost
 
     # Enable Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,55296,80640"

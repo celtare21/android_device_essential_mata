@@ -28,10 +28,10 @@ PRODUCT_RELEASE_NAME := mata
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=mata \
-        PRIVATE_BUILD_DESC="mata-user 8.1.0 OPM1.180104.166 297 release-keys"
-
-BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.166/297:user/release-keys
+        PRIVATE_BUILD_DESC="mata-user 8.1.0 OPM1.180104.234 366 release-keys"
 
 # AICP Device Maintainers
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Vlad Adumitroaie (celtare21)"
+
+BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.234/366:user/release-keys

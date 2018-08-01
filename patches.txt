@@ -1,10 +1,1 @@
-67313  http://gerrit.aicp-rom.com prebuilts/clang/host/linux-x86
 69491  http://gerrit.aicp-rom.com frameworks/native
-70421  http://gerrit.aicp-rom.com build
-70424  http://gerrit.aicp-rom.com frameworks/av
-70427  http://gerrit.aicp-rom.com frameworks/native
-219760 https://review.lineageos.org android/system/nfc
-219761 https://review.lineageos.org android/external/gptfdisk
-219762 https://review.lineageos.org android/external/libtar
-219763 https://review.lineageos.org android/hardware/qcom/display
-219764 https://review.lineageos.org android/hardware/qcom/media

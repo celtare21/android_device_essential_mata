@@ -9,6 +9,8 @@
 #<src>                                   <mnt_point>        <type> <mnt_flags and options>                          <fs_mgr_flags>
 /dev/block/zram0                         none               swap   defaults                                         zramsize=536870912,max_comp_streams=4
 
+/dev/block/bootdevice/by-name/recovery   /recovery          emmc   defaults
+
 /dev/block/bootdevice/by-name/system     /                  ext4   ro,barrier=1                                     wait,slotselect,verify
 /dev/block/bootdevice/by-name/userdata   /data              ext4   noatime,nosuid,nodev,barrier=1,noauto_da_alloc,data=writeback,discard,commit=300   latemount,wait,check,formattable,encryptable=footer,length=-16384
 
